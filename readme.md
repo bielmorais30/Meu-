@@ -1,0 +1,1 @@
+function meugit { python D:\BackUp\projetos\meugit\main.py $args } 

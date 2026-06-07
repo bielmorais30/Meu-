@@ -1,27 +1,18 @@
 from pathlib import Path
+from assets.colors import Colors
 import os
 
-os.system('color')
 
-# Tabela de cores ANSI
-RESET = "\033[0m"
-VERMELHO = "\033[31m"
-VERDE = "\033[32m"
-AMARELO = "\033[33m"
-AZUL = "\033[34m"
-ROXO = "\033[35m"
 
 class Init:
-    def __init__(self, args):
-        self.args = args
-
+    
     def run(self):
         diretorio = Path('.')
         if any(diretorio.glob('*.meugit')):
-            print(f"{VERMELHO}Projeto .meugit já inicializado.{RESET}")
+            print(Colors.vermelho("Projeto .meugit já inicializado."))
             return
         else:
-            print(f"{VERDE}Inicializando o projeto...{RESET}")
+            print(Colors.verde("Inicializando o projeto..."))
             dir_meugit = Path(".meugit")
             dir_meugit_commits = Path(".meugit/commits")
             dir_meugit_objects = Path(".meugit/objects")

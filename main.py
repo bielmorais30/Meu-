@@ -1,6 +1,7 @@
 import sys
 
 from commands.init import Init
+from commands.add import Add
 
 
 def main():
@@ -8,14 +9,14 @@ def main():
 
     match argumentos[0]:
         case 'init':
-            init_command = Init(argumentos[1:])
+            init_command = Init()
             init_command.run()
+        case 'add':
+            add_command = Add(argumentos[1:])
+            add_command.run()
         case _:
             print(f"Argumento inválido: {argumentos[0]}")
-    print(f"Lista de argumentos recebidos: {argumentos}")
-
-    # if len(argumentos) >= 1:
-    #     print(f"Primeiro argumento: {argumentos[0]}")
+    
 
 
 if __name__ == "__main__":    
